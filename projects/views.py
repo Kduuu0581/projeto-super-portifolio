@@ -23,7 +23,7 @@ class ProfileViewSet(viewsets.ModelViewSet):
 
             return render(
                 request,
-                "profile/profile_detail.html",
+                "profile_detail.html",
                 {
                     "profile": serializer.data,
                 },
