@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.permissions import AllowAny, IsAuthenticated
 from django.shortcuts import render
 from projects.models import Profile, Project
 from .serializers import ProfileSerializer, ProjectSerializer
@@ -23,9 +23,9 @@ class ProfileViewSet(viewsets.ModelViewSet):
 
             return render(
                 request,
-                "projects/project_detail.html",
+                "profile/profile_detail.html",
                 {
-                    "project": serializer.data,
+                    "profile": serializer.data,
                 },
             )
         return super().retrieve(request, *args, **kwargs)
