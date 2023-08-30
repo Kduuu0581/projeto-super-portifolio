@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Details</title>
+</head>
+<body>
+    {% if profile %}
+    <h1>{{profile.name}}</h1>
+    <p>{{profile.github}}</p>
+    <p>{{profile.linkedin}}</p>
+    <p>{{profile.bio}}</p>
+
+    {% endif %}
+</body>
+</html>
