@@ -12,6 +12,20 @@
     <p>{{profile.linkedin}}</p>
     <p>{{profile.bio}}</p>
 
-    {% endif %}
+    <h2>Projetos</h2>
+    <ul>
+        {% for project in projects %}
+        <li>{{ project.name }}</li>
+        <span>{{ project.keyword }}{{ project.key_skill }}{{ project.description }}</span>
+        {% endfor %}
+    </ul>
+
+    <h2>Certificados</h2>
+    <ul>
+        {% for certificate in certificates %}
+        <span>{{ certificate.name }}{{ certificate.certifying_institution}}</span>
+        {% endfor %}
+        {% endif %}
+    </ul>
 </body>
 </html>

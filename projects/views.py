@@ -28,16 +28,13 @@ class ProfileViewSet(viewsets.ModelViewSet):
 
     def retrieve(self, request, *args, **kwargs):
         if request.method == "GET":
-            instance = self.get_object()
-            serializer = self.get_serializer(instance)
-
-            return render(
-                request,
-                "profile_detail.html",
-                {
-                    "profile": serializer.data,
-                },
-            )
+            profile = self.get_object()
+            context = {
+                "profile": profile,
+                "projects": profile.projects.all(),
+                "certificates": profile.certificates.all(),
+            }
+            return render(request, "profile_detail.html", context)
         return super().retrieve(request, *args, **kwargs)
 
 
